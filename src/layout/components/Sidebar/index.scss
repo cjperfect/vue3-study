@@ -1,0 +1,40 @@
+.sidebar-container {
+  a {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .sub-el-icon {
+    margin-right: 12px;
+    margin-left: -2px;
+  }
+
+  .el-menu {
+    border: none;
+    height: 100%;
+    width: 100% !important;
+    background: none;
+  }
+
+  // menu hover
+  .sub-menu-title-noDropdown,
+  .el-sub-menu__title {
+    &:hover {
+      background-color: $menuHover !important;
+    }
+  }
+
+  .is-active > .el-sub-menu__title {
+    color: $subMenuActiveText !important;
+  }
+
+  & .nest-menu .el-sub-menu > .el-sub-menu__title,
+  & .el-sub-menu .el-menu-item {
+    min-width: $sideBarWidth !important;
+    background-color: $subMenuBg !important;
+
+    &:hover {
+      background-color: $subMenuHover !important;
+    }
+  }
+}
