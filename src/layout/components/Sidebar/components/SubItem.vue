@@ -5,10 +5,10 @@
     <template v-if="hasOneShowingChild(item.children, item)">
       <RouteLink :to="onlyOneChild.path">
         <ElMenuItem :index="onlyOneChild.path">
+          <ElIcon :size="20">
+            <component :is="onlyOneChild?.meta.icon" />
+          </ElIcon>
           <template #title>
-            <ElIcon :size="20">
-              <component :is="onlyOneChild?.meta.icon" />
-            </ElIcon>
             <span>{{ onlyOneChild?.meta.title }}</span>
           </template>
         </ElMenuItem>

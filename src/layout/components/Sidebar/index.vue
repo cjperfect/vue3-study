@@ -1,8 +1,14 @@
 <template>
-  <div class="sidebar-container" :class="{ 'has-logo': themeConfig.showLogo }">
-    <Logo v-if="themeConfig.showLogo" :is-collapse="isCollapse" />
+  <div class="sidebar-container">
+    <Logo :is-collapse="isCollapse" />
     <ElScrollbar wrap-class="scrollbar-wrapper">
-      <ElMenu :default-active="activeMenu" background-color="#304156" text-color="#bfcbd9" :collapse="isCollapse">
+      <ElMenu
+        :default-active="activeMenu"
+        background-color="#304156"
+        text-color="#bfcbd9"
+        :collapse="isCollapse"
+        class="el-menu-vertical-demo"
+      >
         <SubItem v-for="route in permissionRoutes" :key="route.path" :item="route" />
       </ElMenu>
     </ElScrollbar>
@@ -24,11 +30,8 @@ const permissionRoutes = computed(() => permissionStore.permissionRoutes);
 
 const settingStore = useSettingStore();
 
-// 设置
-const themeConfig = computed(() => settingStore.themeConfig);
-
 // 是否折叠
-const isCollapse = computed(() => !settingStore.isCollapse);
+const isCollapse = computed(() => settingStore.isCollapse);
 
 const activeMenu = computed(() => {
   const { path } = route;
@@ -38,4 +41,9 @@ const activeMenu = computed(() => {
 
 <style scoped lang="scss">
 @import "./index.scss";
+
+.el-menu-vertical-demo:not(.el-menu--collapse) {
+  width: 200px;
+  min-height: 400px;
+}
 </style>

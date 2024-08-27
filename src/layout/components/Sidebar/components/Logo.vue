@@ -6,7 +6,7 @@
       </router-link>
       <router-link v-else key="expand" class="sidebar-logo-link" to="/">
         <img src="@/assets/image/logo.png" class="sidebar-logo" />
-        <h1 class="sidebar-title">Vue Study ChenJiang</h1>
+        <h1 class="sidebar-title">CXKYYDS</h1>
       </router-link>
     </transition>
   </div>
